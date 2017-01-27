@@ -31,15 +31,21 @@ window.getDeck = function() {
 
 $(function() {
   $("#dealbtn").on("click", function(event) {
-
+    console.clear()
     event.preventDefault()
 
-    newShuffle = getDeck().shuffle()
+    window.newShuffle = getDeck().shuffle()
+
+    var cards = []
 
     for (i=0; i<5; i++) {
-      console.log(newShuffle[i])
+      cards[i] = newShuffle[i].split("_of_")
+      console.log(cards[i][0] + " " + cards[i][1])
       $("#c" + (i+1)).attr("src", "http://golearntocode.com/images/cards/" + newShuffle[i] +".png")
     }
+
+
+    $("#hand").html("<h1>Result: Flush!</h1>")
 
   });
 });
