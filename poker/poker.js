@@ -34,7 +34,7 @@ $(function() {
     console.clear()
     event.preventDefault()
 
-    window.newShuffle = getDeck().shuffle()
+    newShuffle = getDeck().shuffle()
 
     var cards = []
 
@@ -46,7 +46,7 @@ $(function() {
 
     window.cards = cards
 
-    // Count up number of cards & suits
+    // Count up occurence of each card value (2 through Ace)
 
     var counter = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     var suits = 0
@@ -94,7 +94,8 @@ $(function() {
 
     console.log(counter)
 
-    // check to see if cards 2,3,4,5 suit matches card 1
+    // Count up occurence of suits to find a flush
+    // Check to see if cards 2,3,4,5 suit matches card 1
     // suit of card 1 doesn't really matter since all suits
     // have to match for a flush
 
@@ -103,6 +104,7 @@ $(function() {
         suits++
       }
     }
+
     console.log("suit counter is " + suits)
 
     var twos = 0
@@ -169,8 +171,6 @@ $(function() {
         Result = "Flush!"
       }
     }
-
-    console.log(Result)
 
     $("#hand").html("<h1>Result: " + Result + "</h1>")
 
