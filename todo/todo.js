@@ -41,7 +41,6 @@ $(function() {
 
       for(i=itemNum; i<7; i++) {
         nextItemVal = parseInt($("#num" + (i+1))[0].innerText)
-        console.log("Next item is num" + (i+1) + " and its value is " + nextItemVal)
         nextItemVal = nextItemVal-1
         $("#num" + (i+1)).html(nextItemVal)
       }
